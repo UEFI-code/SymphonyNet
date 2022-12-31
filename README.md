@@ -19,11 +19,14 @@ cd path_to_your_env
 git clone this_project
 
 cd SymphonyNet
-cat requirements.txt | xargs -n 1 -L 1 pip install
+pip3 install -r requirements.txt
 ``` 
-The reason for using `cat requirements` is we find out the `pytorch-fast-transformers` package needs to be built upon torch, directly pip install requirements may cause `pytorch-fast-transformers` built error.
 
-Note: Building `pytorch-fast-transformers` takes a while, please wait patiently.
+```C
+// The reason for using `cat requirements` is we find out the `pytorch-fast-transformers` package needs to be built upon torch, directly pip install requirements may cause `pytorch-fast-transformers` built error.
+```
+
+Note: I think Building `pytorch-fast-transformers` need to compile cuda code, and PyTorch check your local cuda version match withs its built-time, so hack it yourself and then build process may takes a while, please wait patiently.
 
 ## Training pipeline
 ### Step 1:
